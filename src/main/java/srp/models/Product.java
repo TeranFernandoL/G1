@@ -5,6 +5,7 @@ public class Product {
     private String id;
     private String name;
     private String address;
+    private String category;
 
     public String getId() {
         return id;
@@ -28,6 +29,14 @@ public class Product {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
 }

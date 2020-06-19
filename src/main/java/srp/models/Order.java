@@ -32,8 +32,7 @@ public class Order {
 
         return totalPrice;
     }
-
-
+    
     public Double getPrice() {
         return price;
     }
