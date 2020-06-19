@@ -10,7 +10,6 @@ public class Order {
     private Double price;
     private String address;
     private String courier;
-
     private String customer;
 
 

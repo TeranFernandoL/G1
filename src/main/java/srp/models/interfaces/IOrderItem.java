@@ -7,6 +7,7 @@ public interface IOrderItem {
     Product product = null;
     Integer quantity = null;
     Double price = null;
+    Customer customer = null;
 
     public Double calculatePrice();
 
@@ -19,5 +20,12 @@ public interface IOrderItem {
     public Integer getQuantity();
 
     public Double getPrice();
-
+    
+    public Customer getCustomer();
+    
+    public void setCostumer(Customer customer);
+    
+    public String getCustomerAddress();
+    
+    public Double tax();
 }

@@ -1,5 +1,6 @@
 package srp.models.impl;
 
+import srp.models.Customer;
 import srp.models.Order;
 import srp.models.Product;
 import srp.models.interfaces.IOrderItem;
@@ -10,6 +11,7 @@ public class OrderItemPromocion implements IOrderItem {
     private Product product;
     private Integer quantity;
     private Double price;
+    private Customer customer;
 
     @Override
     public Double calculatePrice() {
@@ -53,6 +55,28 @@ public class OrderItemPromocion implements IOrderItem {
     public void setOrder(Order order) {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public Customer getCustomer() {
+        return null;
+    }
+
+    @Override
+    public void setCostumer(Customer customer) {
+       
+    }
+
+    @Override
+    public String getCustomerAddress() {
+       String CustomerAdress = "Dirección:" + this.customer.getAddress() + "Cliente:" + this.customer.getName();
+       return CustomerAdress;
+    }
+
+    @Override
+    public Double tax() {
+        Double tax = this.getPrice()*0.18;
+        return tax;
     }
     
 }

@@ -20,15 +20,14 @@ public class OrderController {
 
     public void create(Context context) {
         Order order = context.bodyAsClass(Order.class);
-
-        if (order.getId() != null) {
-            throw new BadRequestResponse(String.format("Unable to create a new order with existing id: %s", order));
-        }
-
+        //if (order.getId() != null) {
+        //    throw new BadRequestResponse(String.format("Unable to create a new order with existing id: %s", order));
+        //}
         OrderCourierDispatcher orderCourierDispatcher = new OrderCourierDispatcher(order);
         String bestCourier = orderCourierDispatcher.getBestCourier();
         order.setCourier(bestCourier);
-
+        System.out.println("Orden: " + order);
+        System.out.println(context.body());
         orderRepository.create(order);
         context.status(HttpStatus.CREATED_201)
                 .header(HttpHeader.LOCATION.name(), Paths.formatOrderLocation(order.getId().toString()));
