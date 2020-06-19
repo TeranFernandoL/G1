@@ -10,14 +10,17 @@ import srp.config.DBConnectionManager;
 import srp.controllers.UserController;
 import srp.controllers.CustomerController;
 import srp.controllers.OrderController;
+import srp.controllers.ProductController;
 import srp.repositories.impl.CustomerRepositoryImpl;
 import srp.repositories.impl.OrderRepositoryImpl;
+import srp.repositories.impl.ProductRepositoryImpl;
 
 public class App {
 
     private final DBConnectionManager manager;
     private final CustomerController customerController;
     private final OrderController orderController;
+    private final ProductController productController;
 
     public App() {
         this.manager = new DBConnectionManager();
@@ -26,6 +29,8 @@ public class App {
         this.customerController = new CustomerController(customerRepositoryImpl);
         OrderRepositoryImpl orderRepositoryImpl = new OrderRepositoryImpl(this.manager.getDatabase());
         this.orderController = new OrderController(orderRepositoryImpl);
+        ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl(this.manager.getDatabase());
+        this.productController = new ProductController(productRepositoryImpl);
         
     }
 
@@ -55,6 +60,11 @@ public class App {
         server.get("api/order/:id", this.orderController::find);
         server.get("api/orders", this.orderController::findAll);
         server.post("api/order",this.orderController::create);
+        
+        server.get("api/product/:id", this.productController::find);
+        server.delete("api/product/:id", this.productController::delete);
+        server.get("api/products", this.productController::findAll);
+        server.post("api/products", this.productController::create);
         
         server.get("/hello", ctx -> ctx.html("Hello, Javalin!"));
         server.get("/users", UserController.fetchAllUsernames);
