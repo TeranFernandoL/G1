@@ -4,7 +4,7 @@ public interface IFamily {
 
     String getId();
 
-    void getId(String id);
+    void setId(String id);
 
     String getNameFamily();
 
