@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "srp.App",
+            "projectName": "tiendasrp"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - App2",
             "request": "launch",
             "mainClass": "srp.App2",
