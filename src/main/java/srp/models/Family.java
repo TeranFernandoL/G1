@@ -12,7 +12,7 @@ public class Family implements IFamily{
     }
 
     @Override
-    public void getId(String id){
+    public void setId(String id){
         this.id = id;
     }
 
