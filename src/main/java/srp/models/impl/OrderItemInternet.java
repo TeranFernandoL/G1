@@ -10,7 +10,7 @@ public class OrderItemInternet implements IOrderItem {
     private Product product;
     private Integer quantity;
     private Double price;
-
+    
     @Override
     public Double calculatePrice() {
         // TODO Auto-generated method stub

@@ -1,11 +1,13 @@
 package srp.models;
 
+import srp.models.interfaces.ICategory;
+import srp.models.interfaces.IProduct;
 
-public class Product {
+public class Product implements IProduct{
     private String id;
     private String name;
     private String address;
-    private String category;
+    private ICategory category;
 
     public String getId() {
         return id;
@@ -15,28 +17,33 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
+    @Override
+    public String getCategoryName() {
         return name;
     }
 
-    public void setName(String name) {
+    @Override
+    public void setCategoryName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getAddress() {
         return address;
     }
 
+    @Override
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getCategory() {
+    @Override
+    public ICategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    @Override
+    public void setCategory(ICategory category) {
         this.category = category;
     }
-
 }

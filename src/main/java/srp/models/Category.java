@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package srp.models;
 
-/**
- *
- * @author shinobu
- */
-public class Category {
+import srp.models.interfaces.ICategory;
+import srp.models.interfaces.IFamily;
+
+public class Category implements ICategory{
     private String id;
     private String name;
-    private String family;
+    private IFamily family;
 
     public String getId() {
         return id;
@@ -22,20 +16,23 @@ public class Category {
         this.id = id;
     }
 
-    public String getName() {
+    @Override
+    public String getCategoryName() {
         return name;
     }
 
-    public void setName(String name) {
+    @Override
+    public void setCategoryName(String name) {
         this.name = name;
     }
 
-    public String getFamily() {
+    @Override
+    public IFamily getFamily() {
         return family;
     }
 
-    public void setFamily(String family) {
+    @Override
+    public void setFamily(IFamily family) {
         this.family = family;
     }
-    
 }

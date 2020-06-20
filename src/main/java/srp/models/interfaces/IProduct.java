@@ -8,10 +8,6 @@ public interface IProduct {
     Family family = null;
     Category category = null;
     
-    void setId(String id);
-
-    String getId();
-
     void setCategoryName(String name);
 
     String getCategoryName();

@@ -1,17 +1,17 @@
 package srp.models;
 
+import org.eclipse.jetty.io.IdleTimeout;
+
 import srp.models.interfaces.IFamily;
 
 public class Family implements IFamily{
     private String id;
     private String name;
 
-    @Override
     public String getId(){
         return id;
     }
 
-    @Override
     public void setId(String id){
         this.id = id;
     }

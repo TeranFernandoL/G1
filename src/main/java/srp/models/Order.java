@@ -4,14 +4,12 @@ import java.util.List;
 
 import srp.models.interfaces.IOrderItem;
 
-
 public class Order {
     private String id;
     private Double price;
     private String address;
     private String courier;
     private String customer;
-
 
     public List<IOrderItem> getOrderItems() {
         List<IOrderItem> ordersItems = new ArrayList<>();
